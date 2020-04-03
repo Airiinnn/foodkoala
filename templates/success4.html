@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodKoala</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+    </head>
+    
+    <body>
+        <header>
+            <div style="text-align: right; margin-right: 40px;"> 
+                <p class="link"><a class="link" href="/logout">Sign Out</a></p>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px; margin-top: 20px;">
+                <a href="/"><img src="/static/images/foodkoala.jpg" width="400" height="90" alt="FoodKoala"></a>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px;">
+                <form action="/location" method="post">
+                    <select name="location" class="styled-select rounded" onchange='if(this.value != 0) { this.form.submit(); }'>
+                        <option value="" disabled selected>Select location</option>
+                        <option value="north">North</option>
+                        <option value="south">South</option>
+                        <option value="east">East</option>
+                        <option value="west">West</option>
+                    </select>
+                </form>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px;">
+                <h2 style='display:inline-block;vertical-align:middle;margin:10px;' class="button"><a href="/list" style='color:white;text-decoration:none;'>Sell your food!</a></h2>  
+            </div>   
+        </header>
+
+        <div class="mid">
+            <h1>You have successfully logged in!</h1>
+        </div>
+
+    </body>
+</html>

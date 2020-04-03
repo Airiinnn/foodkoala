@@ -1,0 +1,68 @@
+    <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodKoala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; justify-content: center; margin: 50px;">
+            <a href="/"><img src="/static/images/foodkoala.jpg" width="400" height="90" alt="FoodKoala"></a>
+        </div>
+        <div style="display: flex; justify-content: center; margin: 50px;">
+            <form action="/location" method="post">
+                <select name="location" class="styled-select rounded" onchange='if(this.value != 0) { this.form.submit(); }'>
+                    <option value="" disabled selected>Select location</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                </select>
+            </form>
+        </div>
+    </header>
+    <div style="display: flex; justify-content: center;">
+        <div class="box">
+            <h1 style="font-size: 32pt;text-align:center;">List your food</h1>
+            <form action="/list/check" method="post" style="padding-left: 8%;padding-right: 8%;">
+                <label for="name"><b>Name of item:</b></label>
+                <input type="text" name="name" placeholder="Name of item" style="width:100%;">
+                <br>
+                <label for="phone"><b>Phone number:</b></label>
+                <br>
+                <input type="tel" name="phone" placeholder="Phone number"
+                required style="width:100%;">
+                <br>
+                <label for="location"><b>Location:</b></label>
+                <br>
+                <select name="location" style="width:100%;">
+                    <option value="" disabled selected>Select location</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                </select>
+                <br>
+                <label for="end"><b>Expiry time:</b></label>
+                <br>
+                <input type="datetime-local" name="end">
+                <br>
+                <label for="price"><b>Price:</b></label>
+                <br>
+                <input type="number" min = "0" name="price" placeholder="Price" style="width:100%;">
+                <br>
+                <label for="psw"><b>Password:</b></label>
+                <br>
+                <input type="password"  name="psw" placeholder="Password" style="width:100%;">
+                <br><br>
+                <div style="display: flex; justify-content: center;">
+                    <input type="submit" style="display: flex; justify-content: center;">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

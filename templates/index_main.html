@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodKoala</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+    </head>
+    
+    <body>
+        <header>
+            <div style="text-align: right; margin-right: 40px;"> 
+                <p class="link"><a class="link" href="/logout">Sign Out</a></p>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px; margin-top: 20px;">
+                <a href="/"><img src="/static/images/foodkoala.jpg" width="400" height="90" alt="FoodKoala"></a>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px;">
+                <form action="/location" method="post">
+                    <select name="location" class="styled-select rounded" onchange='if(this.value != 0) { this.form.submit(); }'>
+                        <option value="" disabled selected>Select location</option>
+                        <option value="north">North</option>
+                        <option value="south">South</option>
+                        <option value="east">East</option>
+                        <option value="west">West</option>
+                    </select>
+                </form>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px;">
+                <h2 style='display:inline-block;vertical-align:middle;margin:10px;' class="button"><a href="/list" style='color:white;text-decoration:none;'>Sell your food!</a></h2>  
+            </div> 
+            <div style="display: flex; justify-content: center; margin: 50px;">
+                <h4 class="mid">Your XP: {{ xp }}</h4>  
+            </div> 
+        </header>
+
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-auto-columns: 100px;
+                grid-auto-rows: 500px;
+                grid-column-gap: 50px;
+                grid-row-gap: 50px;
+            }
+            .grid-item {
+                font-size: 30px;
+                text-align: center;
+                font-family: "UD Digi Kyokasho NK-B";
+                border-radius: 15px;
+                float:left;
+                width: 500px;
+                height: 500px;
+                line-height: 30px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        </style>
+        <div class='grid-container'>
+            <div class="about column70">
+            <h1>• About •</h1>
+            <p class="desc">FoodKoala is a food pickup app. But it's not just any food pickup app. It is an <i>excess</i> 
+                food app. <br>FoodKoala aims to reduce food wastage at the retail and consumer levels by allowing retailers 
+                and consumers to sell them at lower prices.
+            </p>
+                <br><br><br><br><br><br>
+                <div class="about column30" style='margin-top:15px; margin-bottom:15px;'>
+                    <img src="/static/images/Capture.JPG">
+                </div>
+            </div>
+            <div class = "column70">
+                <h1>• How to use •</h1>
+                <p class="desc">
+                    Step 1: Select your preferred location to see all the available, delicious dishes in that area!
+                    <br>
+                    Step 2: Find one (or a few dishes) which are irresistible to your palate.
+                    <br>
+                    Step 3: Contact the seller via the mobile number listed to work out an ideal time for you to pick it up!
+                    <br><br>
+                    Ordering is that simple.
+                </p>
+                <br><br>
+                <div class="about column30">
+                    <img src="/static/images/2.JPG" style='margin-top:15px; margin-bottom:5px;'>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

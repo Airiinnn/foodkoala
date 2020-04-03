@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodKoala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; justify-content: center; margin: 50px;">
+            <a href="/"><img src="/static/images/foodkoala.jpg" width="400" height="90" alt="FoodKoala"></a>
+        </div>
+        <div style="display: flex; justify-content: center; margin: 50px;">
+            <form action="/location" method="post">
+                <select name="location" class="styled-select rounded" onchange='if(this.value != 0) { this.form.submit(); }'>
+                    <option value="" disabled selected>Select location</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                </select>
+            </form>
+        </div>
+    </header>
+    <div class="mid">
+        <h1>Login successful!</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodKoala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+    <style>
+        .grid-container {
+            display: grid;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 100px;
+            margin-left: 100px;
+            grid-template-columns: auto auto auto;
+            grid-auto-columns: 100px;
+            grid-auto-rows: 500px;
+            grid-column-gap: 50px;
+            grid-row-gap: 50px;
+        }
+        .grid-item {
+        background-color: #fff1d6;
+        font-size: 30px;
+        text-align: center;
+        box-shadow: 3px 3px lightgrey;
+        font-family: "UD Digi Kyokasho NK-B";
+        border-radius: 15px;
+        float:left;
+        width: 500px;
+        height: 500px;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; justify-content: center; margin: 50px;">
+            <a href="/"><img src="/static/images/foodkoala.jpg" width="400" height="90" alt="FoodKoala"></a>
+        </div>
+        <div style="display: flex; justify-content: center; margin: 50px;">
+            <form action="/location" method="post">
+                <select name="location" class="styled-select rounded" onchange='if(this.value != 0) { this.form.submit(); }'>
+                    <option value="" disabled selected>East</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="west">West</option>
+                </select>
+            </form>
+        </div>
+    </header>
+
+    <div style="display: flex; justify-content: center;">
+        <form action="/mark" method="post">
+            <input type="password" name="psw" placeholder="Food Password">
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="grid-container">
+        {% for listing in listings %}
+            <div class="grid-item">
+                <br><br>
+                Item:<br><p style="font-size:14pt;">{{ listing[1] }}</p>
+                Phone number:<br><p style="font-size:14pt;">{{ listing[2] }}</p>
+                Expiry:<br><p style="font-size:14pt;">{{ listing[3] | replace("T", " ") }}</p>
+                Price:<br><p style="font-size:14pt;">${{ listing[5] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

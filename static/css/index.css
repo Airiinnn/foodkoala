@@ -1,0 +1,204 @@
+body {
+    margin: 0px;
+    background-color: #fff1d6;
+}
+
+header {
+    background-color: #74bafc;
+    margin: 0px;
+    font-size: 35px;
+    font-family: Garamond;
+    color: white;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.styled-select {
+    height: 50px;
+    overflow: hidden;
+    width: 400px;
+    text-align: center;
+}
+
+.styled-select select {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    height: 50px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+}
+
+.rounded {
+    border-radius: 20px;
+    background-color: white;
+}
+
+.about {
+    font-family: "UD Digi Kyokasho NK-B";
+    background-color: #fff1d6;
+    text-align: center;
+}
+
+.mid {
+    font-family: "UD Digi Kyokasho NK-B";
+    text-align: center;
+}
+
+.desc {
+    color: grey;
+    padding-left: 15px;
+}
+
+.link {
+    text-decoration: none;
+    font-family: "UD Digi Kyokasho NK-B";
+    font-size: 16pt;
+}
+
+a.link:link {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a.link:visited {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a.link:hover {
+    color: #FFF;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+a.link:active {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.button {
+    background-color: #03e896;
+    border: 1px solid #EFEFEF;
+    color: #EFEFEF;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    border-radius: 15px;
+    position: relative;
+    font-family: "UD Digi Kyokasho NK-B";
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto;
+    /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* Close button on hover */
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Add Zoom Animation */
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.box {
+    opacity: 0.7;
+    border-radius: 15px;
+    width: 500px;
+    height: 800px;
+    margin: 60px;
+    vertical-align: center;
+    line-height: 50px;
+    border-style: solid;
+    border-width: medium;
+    background-color: #fff1d6;
+    font-family: "UD Digi Kyokasho NK-B";
+}
